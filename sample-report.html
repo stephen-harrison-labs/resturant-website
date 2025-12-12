@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sample Restaurant Profit Report | Genesis Data Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .sample-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .sample-hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sample-hero h1 {
+      font-size: clamp(28px, 4vw, 36px);
+      margin: 0 0 16px;
+      color: var(--text);
+    }
+
+    .sample-hero p {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .sample-section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sample-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .sample-section h2 {
+      font-size: 24px;
+      margin: 0 0 16px;
+      color: var(--text);
+    }
+
+    .sample-section h3 {
+      font-size: 18px;
+      margin: 24px 0 12px;
+      color: var(--text);
+    }
+
+    .sample-section p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .sample-section ul {
+      margin: 16px 0;
+      padding-left: 24px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .metric-item {
+      background: var(--card);
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .metric-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .metric-value {
+      font-size: 20px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: rgba(211, 175, 55, 0.08);
+      color: var(--text);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin: 24px 0;
+    }
+
+    .classification-item {
+      background: var(--card);
+      padding: 16px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+
+    .classification-item strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .classification-item span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--bg-alt);
+      border-radius: 18px;
+      margin: 40px 0 20px;
+    }
+
+    .cta-section h2 {
+      font-size: 28px;
+      margin: 0 0 16px;
+    }
+
+    .cta-section p {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+
+    @media (max-width: 768px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .data-table {
+        font-size: 13px;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 10px 12px;
+      }
+
+      .sample-section {
+        padding: 32px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark">GDI</span>
+        <span class="brand-text">Genesis Data Intelligence</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <div class="sample-hero">
+      <h1>Sample Restaurant Profit Report</h1>
+      <p>
+        This example is based on a fictional mid-sized restaurant, The Heritage Kitchen. It shows the kind of clarity, structure and insight you can expect from your own report. Your real report will be fully customised to your menu, data and objectives.
+      </p>
+    </div>
+
+    <div class="sample-content">
+      <!-- EXECUTIVE SUMMARY -->
+      <section class="sample-section">
+        <h2>Executive Summary (Excerpt)</h2>
+        <p>
+          This is a brief extract from a typical executive summary. Your full report begins with a clear, plain-English overview of what the data is telling you.
+        </p>
+        <ul>
+          <li>Estimated annual revenue: £574,200+</li>
+          <li>Average GP% before waste: 68.5%</li>
+          <li>Average GP% after waste: 63.0%</li>
+          <li>Recorded waste cost: ~£31,000 (around 7–8% of gross profit)</li>
+          <li>Strong overall performance, but mains are running below the overall GP% and are the largest source of waste.</li>
+        </ul>
+      </section>
+
+      <!-- TOPLINE METRICS -->
+      <section class="sample-section">
+        <h2>Topline Metrics Snapshot</h2>
+        <p>
+          Every report includes a clear snapshot of your key financial metrics, calculated from your actual EPOS data.
+        </p>
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-label">Total Revenue</div>
+            <div class="metric-value">£574,217.59</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Gross Profit (before waste)</div>
+            <div class="metric-value">£393,044.86</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Gross Profit (after waste)</div>
+            <div class="metric-value">£361,997.35</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Average GP% (before waste)</div>
+            <div class="metric-value">68.45%</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Average GP% (after waste)</div>
+            <div class="metric-value">63.04%</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Recorded Waste Cost</div>
+            <div class="metric-value">£31,047.51</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Active Menu Items</div>
+            <div class="metric-value">40</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CATEGORY PERFORMANCE -->
+      <section class="sample-section">
+        <h2>Category Performance (Illustrative)</h2>
+        <p>
+          This breakdown shows how different menu categories contribute to overall revenue and profitability. Your report will include your actual categories with full detail.
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Revenue Share</th>
+              <th>Approx. Revenue</th>
+              <th>GP% Before Waste</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mains</td>
+              <td>53%</td>
+              <td>£305,600</td>
+              <td>62.2%</td>
+            </tr>
+            <tr>
+              <td>Drinks</td>
+              <td>24%</td>
+              <td>£138,000</td>
+              <td>79.6%</td>
+            </tr>
+            <tr>
+              <td>Starters</td>
+              <td>11%</td>
+              <td>£61,900</td>
+              <td>72.4%</td>
+            </tr>
+            <tr>
+              <td>Desserts</td>
+              <td>8%</td>
+              <td>£45,300</td>
+              <td>69.9%</td>
+            </tr>
+            <tr>
+              <td>Sides</td>
+              <td>4%</td>
+              <td>£23,500</td>
+              <td>70.3%</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- CHART: CATEGORY PERFORMANCE -->
+      <section class="sample-section chart-section">
+        <h2>Category Performance: Revenue &amp; GP%</h2>
+        <p>
+          This example chart shows how different menu categories contribute to revenue and gross profit percentage across a year.
+        </p>
+        <div class="chart-scroll">
+          <img src="assets/category_revenue_and_gp.png" alt="Bar and line chart showing category revenue and GP% for Desserts, Drinks, Mains, Sides and Starters.">
+        </div>
+        <p class="chart-caption">Illustrative output – your actual chart will be generated from your own sales and menu data.</p>
+      </section>
+
+      <!-- MENU ENGINEERING -->
+      <section class="sample-section">
+        <h2>Menu Engineering Overview</h2>
+        <p>
+          We classify every menu item based on its profitability and popularity. <strong>Stars</strong> are high-margin and high-volume winners. <strong>Plowhorses</strong> are popular but lower-margin workhorses. <strong>Puzzles</strong> are high-margin but underperforming in volume. <strong>Dogs</strong> are low on both dimensions and should be reviewed or retired.
+        </p>
+        <div class="two-col">
+          <div>
+            <div class="classification-item">
+              <strong>Stars</strong>
+              <span>Pan-Seared Sea Bass, House Red Wine (175ml)</span>
+            </div>
+            <div class="classification-item">
+              <strong>Plowhorses</strong>
+              <span>Classic Beef Burger, Margherita Pizza</span>
+            </div>
+          </div>
+          <div>
+            <div class="classification-item">
+              <strong>Puzzles</strong>
+              <span>Onion Rings, Chocolate Brownie & Ice Cream</span>
+            </div>
+            <div class="classification-item">
+              <strong>Dogs</strong>
+              <span>Vegan Buddha Bowl, Apple Crumble with Custard</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: var(--muted); margin-top: 16px;">
+          These are illustrative examples only. Your report will classify your actual menu items based on your real data.
+        </p>
+      </section>
+
+      <!-- CHART: MENU ENGINEERING MATRIX -->
+      <section class="sample-section chart-section">
+        <h2>Menu Engineering Matrix – Volume vs Profitability</h2>
+        <p>
+          Each point represents a menu item, plotted by units sold (volume) and gross profit percentage. This makes it easy to see Stars, Plowhorses, Puzzles and Dogs at a glance.
+        </p>
+        <div class="chart-scroll">
+          <img src="assets/menu_engineering.png" alt="Scatter plot showing menu items across Stars, Plowhorses, Puzzles and Dogs quadrants.">
+        </div>
+        <p class="chart-caption">Sample visual – your report will include a matrix tailored to your menu and sales mix.</p>
+      </section>
+
+      <!-- KEY OPPORTUNITIES & RISKS -->
+      <section class="sample-section">
+        <h2>Key Opportunities & Risks (Sample)</h2>
+        <p>
+          Every report includes a clear summary of where you can improve profitability and what risks to watch.
+        </p>
+        <div class="two-col">
+          <div>
+            <h3>Opportunities</h3>
+            <ul>
+              <li>Lift GP on high-volume mains with small, controlled price changes and portion review.</li>
+              <li>Deliberately upsell high-margin drinks to raise average spend per cover.</li>
+              <li>Use menu layout and server briefing to promote high-margin 'Puzzle' dishes.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Risks</h3>
+            <ul>
+              <li>Waste concentrated in a small group of mains and appetisers.</li>
+              <li>Several low-volume, low-margin dishes taking up menu space without pulling their weight.</li>
+              <li>Cost inflation on key ingredients could erode GP if prices are left unchanged.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT YOUR REPORT WILL INCLUDE -->
+      <section class="sample-section">
+        <h2>What Your Report Will Include</h2>
+        <ul>
+          <li>Clear topline view of revenue, GP% and waste.</li>
+          <li>Menu engineering map for every item on your menu.</li>
+          <li>Category-by-category performance breakdown.</li>
+          <li>Scenario modelling for price changes and cost inflation.</li>
+          <li>A 60–90 day action plan focused on profit, not theory.</li>
+        </ul>
+      </section>
+
+      <!-- WHAT YOU GET IN THE FULL REPORT -->
+      <section class="sample-section">
+        <h2>What You Get in the Full Report</h2>
+
+        <h3>Topline Financial Performance</h3>
+        <ul>
+          <li>Total revenue, gross profit and GP% (before &amp; after waste)</li>
+          <li>Category-level revenue and GP contribution</li>
+          <li>Seasonal and monthly performance patterns (where data allows)</li>
+          <li>Clear, non-technical explanation of what is driving profit</li>
+        </ul>
+
+        <h3>Menu Engineering Breakdown</h3>
+        <ul>
+          <li>Stars, Plowhorses, Puzzles and Dogs for every item</li>
+          <li>Volume vs profitability mapping</li>
+          <li>High-impact pricing and positioning recommendations</li>
+          <li>Projected uplift from targeted menu changes</li>
+        </ul>
+
+        <h3>Waste &amp; Efficiency Analysis</h3>
+        <ul>
+          <li>Waste-adjusted GP calculations</li>
+          <li>Leakage cost for each high-waste item</li>
+          <li>Prep-level and portion-control recommendations</li>
+          <li>Estimated GP uplift from reducing waste hotspots</li>
+        </ul>
+
+        <h3>Pricing &amp; Scenario Modelling</h3>
+        <ul>
+          <li>Controlled price increase tests</li>
+          <li>Puzzle-item discount modelling</li>
+          <li>Category elasticity modelling</li>
+          <li>Cost-inflation stress tests (+5% to +10%)</li>
+        </ul>
+
+        <h3>Operational &amp; Behaviour Insights (If Provided)</h3>
+        <ul>
+          <li>Staff revenue and GP per hour</li>
+          <li>Cover patterns and booking behaviour</li>
+          <li>No-show and cancellation impact</li>
+          <li>Opportunity windows for targeted promotions</li>
+        </ul>
+
+        <h3>Action Plan (60–90 Days)</h3>
+        <ul>
+          <li>Clear, prioritised changes to protect and grow GP</li>
+          <li>Operational quick wins</li>
+          <li>Menu redesign recommendations</li>
+          <li>Upsell strategies that lift average spend</li>
+        </ul>
+
+        <h3>Dual-Layer Verification</h3>
+        <ul>
+          <li>Automated intelligence engine analysis</li>
+          <li>Manual analyst review of key calculations</li>
+          <li>Cross-check of revenue, GP and waste totals</li>
+          <li>Data reliability scoring and notes</li>
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <h2>Want to see this for your restaurant?</h2>
+        <p>
+          If you can get basic exports out of your POS, we can turn them into a report like this. No long calls, no fluff – just clear numbers, insight and actions.
+        </p>
+        <a href="index.html#contact" class="btn-primary">Start with a free quote</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p><strong>Genesis Data Intelligence</strong></p>
+        <p>Restaurant Profit Intelligence &amp; EPOS Analysis</p>
+
+        <p>Email: <a href="mailto:gdi.iom.ai@gmail.com">gdi.iom.ai@gmail.com</a></p>
+
+        <p class="footer-small">We treat all data as strictly confidential. NDAs available on request.</p>
+
+        <p class="footer-small">© Genesis Data Intelligence — All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
